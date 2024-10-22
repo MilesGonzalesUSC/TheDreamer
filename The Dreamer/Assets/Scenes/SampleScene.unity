@@ -1381,7 +1381,7 @@ PrefabInstance:
     - target: {fileID: 2127717601279471698, guid: 08f93835162eb4ed3905f2628454f7a5,
         type: 3}
       propertyPath: m_Name
-      value: HornedFriend (1)
+      value: ArteryFriend
       objectReference: {fileID: 0}
     - target: {fileID: 2134528974084578786, guid: 08f93835162eb4ed3905f2628454f7a5,
         type: 3}
@@ -1452,7 +1452,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: db892221de8774287b2909857a35c13c,
+      objectReference: {fileID: 21300000, guid: a70c2e5fb502642c7bb12f8c1119a388,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1674,7 +1674,7 @@ PrefabInstance:
     - target: {fileID: 2127717601279471698, guid: 08f93835162eb4ed3905f2628454f7a5,
         type: 3}
       propertyPath: m_Name
-      value: WingedFriend
+      value: ArteryFriend (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2134528974084578786, guid: 08f93835162eb4ed3905f2628454f7a5,
         type: 3}
@@ -1735,7 +1735,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8dc545ae4bc96401f82849f6be83e813,
+      objectReference: {fileID: 21300000, guid: a70c2e5fb502642c7bb12f8c1119a388,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
