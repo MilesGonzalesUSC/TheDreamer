@@ -16,7 +16,7 @@ public class Cube : MonoBehaviour
     {
         transform.Rotate( rotationSpeed * Time.deltaTime, rotationSpeed * Time.deltaTime, rotationSpeed * Time.deltaTime);
 		Vector3 moveDirection = new Vector3(0,0,moveSpeed * Time.deltaTime);
-		transform.position += moveDirection;
+		transform.localPosition += moveDirection;
     }
 
 
