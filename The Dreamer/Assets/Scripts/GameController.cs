@@ -5,9 +5,9 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
 	public bool gameWon;
+	public bool bushHover;
 
 	public void Start( )
 	{
-		gameWon = false;
-	}
+		gameWon = false;	}
 }
