@@ -9,8 +9,10 @@ public class Spawner : MonoBehaviour {
     public GameObject spawnLocation;
     [HideInInspector] public GameObject spawnedObject;
     [HideInInspector] public bool gameWon;
+    public bool collideSpawner;
 
     void Start( ) {
+        if(!collideSpawner)
         SpawnObject();
     }
 
@@ -18,7 +20,7 @@ public class Spawner : MonoBehaviour {
     void Update( ) {
         gameWon = GameObject.FindGameObjectWithTag( "GameController" ).GetComponent<GameController>().gameWon;
 
-        if(spawnedObject == null && !gameWon) {
+        if(spawnedObject == null && !gameWon && !collideSpawner) {
             SpawnObject();
         }
     }
@@ -27,4 +29,12 @@ public class Spawner : MonoBehaviour {
         spawnedObject = Instantiate( objectToSpawn, spawnLocation.transform );
 
     }
+
+	private void OnColliderEnter (Collision coll)
+	{
+		if(coll.gameObject.name == "Cube" && collideSpawner)
+        {
+            SpawnObject( );
+        }
+	}
 }

@@ -13,9 +13,10 @@ public class BushMove : MonoBehaviour
 	private bool goingToEnd;
 	public void Start( )
 	{
+		startPosY = transform.position.y;
+		maxY = transform.position.y + maxY;
 		goingToEnd = true;
 		SetEndPos();
-		startPosY = transform.position.y;
 		gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 	}
 
@@ -53,6 +54,6 @@ public class BushMove : MonoBehaviour
 
 	public void SetEndPos( )
 	{
-		endPosY = Random.Range( 0.005f, maxY );
+		endPosY = Random.Range( startPosY + 0.05f, maxY );
 	}
 }
