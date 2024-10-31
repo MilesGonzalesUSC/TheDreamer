@@ -5,11 +5,17 @@ using UnityEngine.EventSystems;
 
 public class Cube : MonoBehaviour
 {
-    public float rotationSpeed;
+	private Material BaseMaterial;
+	public Material PassingMaterial;
+	private Renderer Rend;
+	private string baseTag;
+	public float rotationSpeed;
 	public float moveSpeed;
 	public bool canPass;
 	private void Awake( )
 	{
+		baseTag = gameObject.tag;
+		BaseMaterial = gameObject.GetComponent<Renderer>().material;
 		canPass = false;
 	}
 	void Update()
@@ -17,6 +23,10 @@ public class Cube : MonoBehaviour
         transform.Rotate( rotationSpeed * Time.deltaTime, rotationSpeed * Time.deltaTime, rotationSpeed * Time.deltaTime);
 		Vector3 moveDirection = new Vector3(0,0,moveSpeed * Time.deltaTime);
 		transform.localPosition += moveDirection;
+
+		if(gameObject.gameObject.tag == "Passable") {
+			IFrames();
+		}
     }
 
 
@@ -33,5 +43,12 @@ public class Cube : MonoBehaviour
 			Destroy( gameObject );
 			
 		}
+	}
+
+	IEnumerator IFrames() {
+		gameObject.tag = "Passable";
+		yield return new WaitForSeconds(1f);
+		Rend.material = BaseMaterial;
+		gameObject.tag = baseTag;
 	}
 }

@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60996c879d03b4459319f654fd1c896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PassingMaterial: {fileID: 2100000, guid: 5805cd025f9be184a86542d8e71cdd81, type: 2}
   rotationSpeed: 40
   moveSpeed: 5
   canPass: 0

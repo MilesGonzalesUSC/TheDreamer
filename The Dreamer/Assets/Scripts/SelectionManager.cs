@@ -10,6 +10,8 @@ public class SelectionManager : MonoBehaviour
 	[SerializeField] private Material defaultMaterial;
     [SerializeField] private Material passingMaterial;
 
+    public float invincibleForSeconds;
+
     private Transform _selection;
 
 
@@ -40,7 +42,8 @@ public class SelectionManager : MonoBehaviour
                 }
 				if(Input.GetMouseButtonDown( 0 ))
 				{
-					selection.tag = "Passable";                    
+                    selection.gameObject.tag = "Passable";
+
 				}
 				_selection = selection;
 			}
