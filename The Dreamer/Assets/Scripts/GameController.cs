@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour
 			for(int i = 0; i < Fairies.Length; i++) {
 				GameObject currFairy = Fairies[i];
 				Animator currAnim = currFairy.GetComponent<Animator>();
-				currAnim.SetTrigger( "GoToHeaven" );
+				currAnim.SetBool( "Go", true );
 			}
 		}
 	}

@@ -63,8 +63,8 @@ AnimatorController:
   m_Name: Fairy 4
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: GoToHeaven
-    m_Type: 9
+  - m_Name: Go
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -113,7 +113,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: GoToHeaven
+    m_ConditionEvent: Go
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4847763356185006011}
@@ -166,7 +166,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: GoToHeaven
+    m_ConditionEvent: Go
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4847763356185006011}
@@ -176,7 +176,7 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
-  m_ExitTime: 0.9285714
+  m_ExitTime: 2
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
