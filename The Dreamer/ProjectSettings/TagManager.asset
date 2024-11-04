@@ -8,6 +8,7 @@ TagManager:
   - BadWall
   - GoodWall
   - Passable
+  - Fairy
   layers:
   - Default
   - TransparentFX

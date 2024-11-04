@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour {
-    [Header( "Spwan Settings" )]
+    [Header( "Spawn Settings" )]
     public float spawnInterval;
     public GameObject objectToSpawn;
     public GameObject spawnLocation;
     [HideInInspector] public GameObject spawnedObject;
-    [HideInInspector] public bool gameWon;
+    [HideInInspector] public bool puzzleDone;
     public bool collideSpawner;
 
     void Start( ) {
@@ -18,9 +18,22 @@ public class Spawner : MonoBehaviour {
 
     // Update is called once per frame
     void Update( ) {
-        gameWon = GameObject.FindGameObjectWithTag( "GameController" ).GetComponent<GameController>().gameWon;
+        if(transform.name == "Spawner 1") {
+            puzzleDone = GameObject.FindGameObjectWithTag( "GameController" ).GetComponent<GameController>().firstPuzzle;
 
-        if(spawnedObject == null && !gameWon && !collideSpawner) {
+        }
+        else if(transform.name == "Spawner 2") {
+            puzzleDone = GameObject.FindGameObjectWithTag( "GameController" ).GetComponent<GameController>().secondPuzzle;
+
+        } else if(transform.name == "Spawner 3") {
+            puzzleDone = GameObject.FindGameObjectWithTag( "GameController" ).GetComponent<GameController>().thirdPuzzle;
+
+        } else if(transform.name == "Spawner 4") {
+            puzzleDone = GameObject.FindGameObjectWithTag( "GameController" ).GetComponent<GameController>().fourthPuzzle;
+
+        }
+
+        if(spawnedObject == null && !puzzleDone && !collideSpawner) {
             SpawnObject();
         }
     }
@@ -29,12 +42,4 @@ public class Spawner : MonoBehaviour {
         spawnedObject = Instantiate( objectToSpawn, spawnLocation.transform );
 
     }
-
-	private void OnColliderEnter (Collision coll)
-	{
-		if(coll.gameObject.name == "Cube" && collideSpawner)
-        {
-            SpawnObject( );
-        }
-	}
 }

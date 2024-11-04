@@ -23,10 +23,6 @@ public class Cube : MonoBehaviour
         transform.Rotate( rotationSpeed * Time.deltaTime, rotationSpeed * Time.deltaTime, rotationSpeed * Time.deltaTime);
 		Vector3 moveDirection = new Vector3(0,0,moveSpeed * Time.deltaTime);
 		transform.localPosition += moveDirection;
-
-		if(gameObject.gameObject.tag == "Passable") {
-			IFrames();
-		}
     }
 
 
@@ -38,17 +34,28 @@ public class Cube : MonoBehaviour
 		}
 		if(other.transform.tag == "GoodWall")
 		{
-			Debug.Log( "You Win!!!" );
-			GameObject.FindGameObjectWithTag( "GameController" ).GetComponent<GameController>().gameWon = true;
+			if(other.name == "PuzzleEnd1") {
+				GameObject.FindGameObjectWithTag( "GameController" ).GetComponent<GameController>().firstPuzzle = true;
+				GameObject.FindGameObjectWithTag( "GameController" ).GetComponent<GameController>().FairyToTower(0);
+
+			} else if(other.name == "PuzzleEnd2") {
+				GameObject.FindGameObjectWithTag( "GameController" ).GetComponent<GameController>().secondPuzzle = true;
+				GameObject.FindGameObjectWithTag( "GameController" ).GetComponent<GameController>().FairyToTower( 1 );
+
+
+			} else if(other.name == "PuzzleEnd3") {
+				GameObject.FindGameObjectWithTag( "GameController" ).GetComponent<GameController>().thirdPuzzle = true;
+				GameObject.FindGameObjectWithTag( "GameController" ).GetComponent<GameController>().FairyToTower( 2 );
+
+
+			} else if(other.name == "PuzzleEnd4") {
+				GameObject.FindGameObjectWithTag( "GameController" ).GetComponent<GameController>().fourthPuzzle = true;
+				GameObject.FindGameObjectWithTag( "GameController" ).GetComponent<GameController>().FairyToTower( 3 );
+
+
+			}
 			Destroy( gameObject );
 			
 		}
-	}
-
-	IEnumerator IFrames() {
-		gameObject.tag = "Passable";
-		yield return new WaitForSeconds(1f);
-		Rend.material = BaseMaterial;
-		gameObject.tag = baseTag;
 	}
 }
